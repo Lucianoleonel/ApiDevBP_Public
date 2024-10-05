@@ -4,5 +4,48 @@
         <name>ApiDevBP</name>
     </assembly>
     <members>
+        <member name="M:ApiDevBP.Controllers.UsersController.SaveUser(ApiDevBP.Models.UserModel)">
+            <summary>
+            Agrega un Usuario a la Fuente de Datos
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiDevBP.Controllers.UsersController.GetUsers">
+            <summary>
+            Obtiene una Lista de los Usuarios existentes en la Fuente de Datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiDevBP.Controllers.UsersController.GetUsers(System.Int32)">
+            <summary>
+            Obtiene los datos de un Usuario que exista en la Fuente de Datos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiDevBP.Controllers.UsersController.UpdateUser(System.Int32,ApiDevBP.Models.UserModel)">
+            <summary>
+            Actualiza un Usuario que encuentre en la Fuente de Datos
+            </summary>
+            <param name="id"></param>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiDevBP.Controllers.UsersController.Delete(System.Int32)">
+            <summary>
+            Elimina un Usuario que exista en la Fuente de Datos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiDevBP.Controllers.UsersController.buildResponse(System.Object,System.Net.HttpStatusCode)">
+            <summary>
+            This method is better placed somewhere else to use on all controllers
+            </summary>
+            <param name="_data"></param>
+            <param name="httpStatusCode"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
