@@ -1,6 +1,5 @@
-﻿using ApiDevBP.DTO;
-using ApiDevBP.Entities;
-using ApiDevBP.Infrastructure;
+﻿using ApiDevBP.Entities;
+using ApiDevBP.Exceptions;
 using ApiDevBP.Models;
 using ApiDevBP.Repositories;
 using ApiDevBP.Validations;
