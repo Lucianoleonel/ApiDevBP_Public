@@ -10,6 +10,27 @@
 	<PropertyGroup>
 		<DocumentationFile>./Documentation.xml</DocumentationFile>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Content Remove="Docs\RequestPost - Copy (2).json" />
+	  <Content Remove="Docs\RequestPost - Copy (3).json" />
+	  <Content Remove="Docs\RequestPost - Copy (4).json" />
+	  <Content Remove="Docs\RequestPost - Copy (5).json" />
+	  <Content Remove="Docs\RequestPost - Copy - Copy (2).json" />
+	  <Content Remove="Docs\RequestPost - Copy - Copy.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Docs\Users\Delete\CURL - Copy.txt" />
+	  <None Remove="Docs\Users\Delete\CURL.txt" />
+	  <None Remove="Docs\Users\GetUser\CURL - Copy.txt" />
+	  <None Remove="Docs\Users\Put\CURL - Copy - Copy.txt" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="Docs\Users\GetList\CURL.txt" />
+	  <Content Include="Docs\Users\Post\CURL.txt" />
+	  <Content Include="Docs\Users\Put\CURL.txt" />
+	  <Content Include="Docs\Users\GetUser\CURL.txt" />
+	  <Content Include="Docs\Users\Delete\CURL.txt" />
+	</ItemGroup>
 
 	<ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.0" />

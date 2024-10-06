@@ -1,0 +1,3 @@
+﻿curl -X 'GET' \
+'https://localhost:7016/api/Users/1' \
+-H 'accept: */*'

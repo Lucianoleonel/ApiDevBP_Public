@@ -35,13 +35,13 @@ namespace ApiDevBP.ApplicationServices
                 punto de vista seria mejor que las capas interiores no tengan que manejar 
                 logica externa
             */
-            return await _userApplicationService.AddAsync(Mappers.UserMapperCustom.Map(userDTO));
+            return await _userApplicationService.AddAsync(_mapper.Map<UserEntity>(userDTO));
         }
 
         public async Task<IEnumerable<UserModel>> GetUsersAsync()
         {
             List<UserEntity> listUserEntity = await _userApplicationService.GetUsersAsync();
-            return listUserEntity.Select(Mappers.UserMapperCustom.Map);
+            return listUserEntity.Select(userEntity => _mapper.Map<UserModel>(userEntity)).ToList();            
         }
 
         public async Task<UserModel> GetUserAsync(int id)
@@ -50,7 +50,7 @@ namespace ApiDevBP.ApplicationServices
             if (userEntity is null)
                 throw new UserException($"El usuario {id} no existe");
 
-            return Mappers.UserMapperCustom.Map(userEntity);
+            return _mapper.Map<UserModel>(userEntity);
         }
 
         public async Task<bool> UserExistAsync(int id)
@@ -63,12 +63,13 @@ namespace ApiDevBP.ApplicationServices
         public async Task UpdateAsync(UserModel userDTO)
         {
             _userValidator.Validate(userDTO);
-            await _userApplicationService.UpdateAsync(Mappers.UserMapperCustom.Map(userDTO));
+            UserEntity userEntity = _mapper.Map<UserEntity>(userDTO);
+            await _userApplicationService.UpdateAsync(userEntity);
         }
 
         public async Task DeleteAsync(UserModel userDTO)
         {            
-            await _userApplicationService.DeleteAsync(Mappers.UserMapperCustom.Map(userDTO));
+            await _userApplicationService.DeleteAsync(_mapper.Map<UserEntity>(userDTO));
         }
     }
 }

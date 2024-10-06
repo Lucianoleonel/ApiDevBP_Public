@@ -62,6 +62,10 @@ namespace ApiDevBP.Controllers
             try
             {
                 IEnumerable<UserModel> listUsers = await userApplicationService.GetUsersAsync();
+
+                if (!listUsers.Any())
+                    return NoContent();
+
                 return Ok(buildResponse(listUsers, HttpStatusCode.OK));
             }
             catch (Exception ex)

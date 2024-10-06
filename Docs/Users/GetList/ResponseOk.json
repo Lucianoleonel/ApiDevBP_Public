@@ -1,0 +1,15 @@
+﻿{
+  "data": [
+    {
+      "id": 1,
+      "name": "Name",
+      "lastname": "LastName"
+    },
+    {
+      "id": 2,
+      "name": "Name",
+      "lastname": "LastName"
+    }
+  ],
+  "code": 200
+}

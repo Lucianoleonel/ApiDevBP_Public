@@ -4,6 +4,7 @@ using ApiDevBP.Infrastructure;
 using ApiDevBP.Mappers;
 using ApiDevBP.Repositories;
 using ApiDevBP.Validations;
+using AutoMapper;
 using Microsoft.OpenApi.Models;
 using Serilog;
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,21 @@ builder.Services.Configure<ConfigurationDB>(builder.Configuration.GetSection("Da
 
 #region Automapper Config
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+try
+{
+    var mapperConfig = new MapperConfiguration(cfg => {
+        cfg.AddProfile<MappingProfile>();
+    });
+
+    mapperConfig.AssertConfigurationIsValid();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, $"Ocurrio un error Al configurar Automapper {DateTime.UtcNow}");
+    throw ex;
+}
+
 #endregion
 
 
